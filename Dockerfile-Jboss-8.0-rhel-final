@@ -16,6 +16,7 @@ WORKDIR /opt/server
 #ADD https://access.redhat.com/cspdownload/ad3baa942d4998d2e12f5dc6f6dd0fe0/65ab78d3/JBEAP-7.4.0/jboss-eap-7.4.0.zip /opt/server
 
 ADD  https://access.redhat.com/cspdownload/67eedbb60d7c90f5a014efb9e7a0ba1a/6a39d6bd/JBEAP-8.0.0/jboss-eap-8.0.0.zip /opt/server
+ADD  https://corretto.aws/downloads/resources/21.0.5.11.1/amazon-corretto-21.0.5.11.1-linux-x64.tar.gz  /opt/server
 
 #COPY ./Jboss-8/* /opt/server/
 
@@ -31,6 +32,7 @@ RUN cd /opt/server \
 RUN mkdir /opt/server/{Applogs,MctcLog,apisLog,Logs}
 
 RUN rm -rvf jboss-eap-8.0.0.zip
+RUN rm -rvf amazon-corretto-21.0.5.11.1-linux-x64.tar.gz
 
 #ADD https://raw.githubusercontent.com/aeimer/java-example-helloworld-war/master/dist/helloworld.war /opt/server/jboss-eap-8.0/standalone/deployments/
 
